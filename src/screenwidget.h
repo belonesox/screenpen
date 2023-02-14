@@ -83,7 +83,10 @@ private:
 	void scalePixmapAt(const QPoint pos);
 
 	void checkPixmapPos();
+	const QPoint coordScreen2Pixmap(const QPoint& pos);
+	const QPoint coordPixmap2Screen(const QPoint& pos);
 
+    void points2xywh(const QPoint &start_point, const QPoint &end_point, int *x, int *y, int *w, int *h);
 	void getRealUserObjectPos(const UserObjectData &userObj, int *x, int *y, int *w, int *h);
 };
 
