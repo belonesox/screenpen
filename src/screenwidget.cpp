@@ -15,7 +15,7 @@ ScreenWidget::ScreenWidget(QWidget *parent) :
     QPoint globalCursorPos_ = QCursor::pos();
 
     // tmp for debug
-    globalCursorPos_ = QPoint(1930, 400);
+    //globalCursorPos_ = QPoint(1930, 400);
 
     _desktopScreen = QGuiApplication::screenAt(globalCursorPos_);
     QRect msg(_desktopScreen->geometry());
@@ -328,13 +328,13 @@ void ScreenWidget::checkPixmapPos()
 
 const QPoint ScreenWidget::coordScreen2Pixmap(const QPoint& pos){
     const QPoint res(_desktopPixmapPos + pos/_desktopPixmapScale);
-    qInfo() << "coordScreen2Pixmap" << pos << " to " << res;
+    // qInfo() << "coordScreen2Pixmap" << pos << " to " << res;
     return res;
 };
 
 const QPoint ScreenWidget::coordPixmap2Screen(const QPoint& pos){
     const QPoint res((pos - _desktopPixmapPos)*_desktopPixmapScale);
-    qInfo() << "coordPixmap2Screen" << pos << " to " << res;
+    // qInfo() << "coordPixmap2Screen" << pos << " to " << res;
     return res;
 };
 

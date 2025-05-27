@@ -1,1 +1,12 @@
 build
+.vscode/
+release/
+src/CMakeCache.txt
+src/CMakeFiles/
+src/Makefile
+src/cmake_install.cmake
+src/install_manifest.txt
+src/moc_screenwidget.cpp
+src/moc_screenwidget.cpp_parameters
+src/screenpen
+src/ui_screenwidget.h
