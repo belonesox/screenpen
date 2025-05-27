@@ -1,5 +1,4 @@
 build
-.vscode/
 release/
 src/CMakeCache.txt
 src/CMakeFiles/

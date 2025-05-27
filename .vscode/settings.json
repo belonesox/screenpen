@@ -1,0 +1,19 @@
+{
+    "files.associations": {
+        "all": "ansible",
+        "Vagrantfile": "ruby",
+        "chrono": "cpp",
+        "unordered_map": "cpp",
+        "future": "cpp",
+        "optional": "cpp",
+        "tuple": "cpp",
+        "variant": "cpp",
+        "hash_map": "cpp",
+        "*.tcc": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "vector": "cpp"
+    }
+}
