@@ -69,7 +69,7 @@ qt5_wrap_ui(sources_ui ${sources_ui})
 add_executable(${PROJECT_NAME} ${sources_cpp} ${sources_moc} ${sources_ui})
 set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "-std=c++11")
 #target_link_libraries(${PROJECT_NAME} X11)
-qt5_use_modules(${PROJECT_NAME} Core Gui Widgets OpenGL)  # add Qt5 specific properties
+target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Gui Qt5::Widgets Qt5::OpenGL)
 
 # Install ##########################################################################################
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION "bin")
