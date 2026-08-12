@@ -6,7 +6,6 @@
 #include <QMouseEvent>
 #include <QScreen>
 #include <QtDebug>
-#include <cmath>
 
 ScreenWidget::ScreenWidget(QWidget *parent) :
         QGLWidget(parent),
