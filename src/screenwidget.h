@@ -88,6 +88,7 @@ private:
 
     void points2xywh(const QPoint &start_point, const QPoint &end_point, int *x, int *y, int *w, int *h);
 	void getRealUserObjectPos(const UserObjectData &userObj, int *x, int *y, int *w, int *h);
+    void drawArrow(QPainter &p, int x1, int y1, int x2, int y2, const QPen &pen);
 };
 
 #endif // SCREENWIDGET_H

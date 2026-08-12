@@ -20,7 +20,7 @@
 #
 ####################################################################################################
 
-cmake_minimum_required(VERSION 2.8.9)
+cmake_minimum_required(VERSION 3.16)
 
 project(screenpen)
 
@@ -39,7 +39,9 @@ if(${src_dir_real_path} STREQUAL ${bin_dir_real_path})
 endif()
 
 # Check required libraries #########################################################################
-find_package(Qt5 5.1.0 REQUIRED COMPONENTS Core Gui Widgets OpenGL)
+# 5.14 is the real floor: QWheelEvent::position() was introduced there.
+# QGuiApplication::screenAt() (5.10) already put the true minimum above 5.1.0.
+find_package(Qt5 5.14.0 REQUIRED COMPONENTS Core Gui Widgets OpenGL)
 
 # Settings #########################################################################################
 include_directories("${CMAKE_BINARY_DIR}")
@@ -67,7 +69,7 @@ qt5_wrap_ui(sources_ui ${sources_ui})
 add_executable(${PROJECT_NAME} ${sources_cpp} ${sources_moc} ${sources_ui})
 set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "-std=c++11")
 #target_link_libraries(${PROJECT_NAME} X11)
-qt5_use_modules(${PROJECT_NAME} Core Gui Widgets OpenGL)  # add Qt5 specific properties
+target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Gui Qt5::Widgets Qt5::OpenGL)
 
 # Install ##########################################################################################
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION "bin")
