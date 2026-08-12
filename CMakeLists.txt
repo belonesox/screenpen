@@ -39,7 +39,9 @@ if(${src_dir_real_path} STREQUAL ${bin_dir_real_path})
 endif()
 
 # Check required libraries #########################################################################
-find_package(Qt5 5.1.0 REQUIRED COMPONENTS Core Gui Widgets OpenGL)
+# 5.14 is the real floor: QWheelEvent::position() was introduced there.
+# QGuiApplication::screenAt() (5.10) already put the true minimum above 5.1.0.
+find_package(Qt5 5.14.0 REQUIRED COMPONENTS Core Gui Widgets OpenGL)
 
 # Settings #########################################################################################
 include_directories("${CMAKE_BINARY_DIR}")
